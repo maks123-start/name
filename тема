@@ -1,0 +1,104 @@
+#include <iostream>
+#include <string>
+using namespace std;
+void advisor(string A){
+    if(A=="y"){
+        cout << "Will you be developing the [x]frontend [y]backend or [z]both?";//advanced users
+        cin >> A;
+        if(A=="x"){//frontend
+            cout << "Are you more familiar with [x]object oriented programming or [y]procedural programming? ";
+            cin >> A;
+            if(A=="x"){
+                cout << "Recommended solution: Angular";
+            }
+            else if(A=="y"){
+                cout << "Is [x]thourough documentation more important than [y]features?";
+                cin >> A;
+                if(A=="x"){
+                    cout << "Recommended solution: Vue.js";
+                }
+                else if(A=="y"){
+                    cout << "Recommended solution: React";
+                }
+            }
+        }
+        else if (A=="z"){
+            cout << "If you need a database, will it be [x]relational or [y]not?";
+            cin >> A;
+            if(A=="x"){
+                cout << "Do you value stability over new features?";
+                cout << "[x]yes, [y]no";
+                cin >> A;
+                if(A=="x"){
+                    cout << "Recommended solution MEAN stack";
+                }
+                else if(A=="y"){
+                    cout << "what programming languages are you familiar with?";
+                    cout << "[x]C/C#/C++, [y]Python, [z]PHP";
+                    cin >> A;
+
+                    if(A=="x"){
+                      cout << "Recommended solution: ASP.NET";
+                    }
+                    else if(A=="y"){
+                      cout << "Recommended solution:LEMP";
+                    }
+                    else if(A=="z"){
+                      cout << "Recommended solution:LAMP";
+                    }
+                }
+            }
+        }
+
+        else if (A=="y"){
+            cout << "What programming languages are you familiar with?";
+            cout << "[x]C/C#/C++, [y]javascript, [z]Python, [o]PHP";
+            cin >> A;
+
+            if(A=="x"){
+                cout << "Recommended solution: ASP.NET";
+            }
+            else if(A=="y"){
+                cout << "Recommended solution: Express.js";
+            }
+            else if(A=="z"){
+                cout << "Recommended solution: Django";
+            }
+            else if(A=="o"){
+                cout << "Recommended solution: Laravel";
+                cout << "If a database is needed, should it be relational?";
+                cout << "Yes[x], No[y]";
+                cin >> A;
+                if(A=="x"){
+                    cout << "Recommended solution: MariaDB";
+                }
+
+                else if(A=="y"){
+                    cout << "Recommended solution: MongoDB";
+                }
+            }
+
+        }
+        else if(A=="x"){//for beginners
+            cout <<"Do you value [x]simplicity and usability over [y]features?";
+            cin >> A;
+            if(A=="x"){
+                cout << "Recommended solution: SQUARESPACE ";
+            }
+
+            else if(A=="no"){
+                cout << "Recommended solution: WIX ";
+            }
+        }
+    }
+}
+int main()
+{
+    cout << "Hello, this is an expert system designed to help you choose the correct web technologies to build your own site!\n";
+    cout << "We'll begin by accessing your current level of knowledge, Do you currently have any experience developing websites?";
+    cout << "[x]no, [y]yes ";
+    string answer;
+    cin >> answer;
+    advisor(answer);
+    return 0;
+}
